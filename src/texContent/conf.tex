@@ -1,0 +1,93 @@
+%\usepackage[utf8]{inputenc} % encode en UTF8
+
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage{lmodern}
+%\usepackage{babel}
+
+\usepackage[top=2.54cm, bottom=2.54cm, left=3.81cm, right=3.81cm]{geometry}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{float}
+\graphicspath{ {./figure/} }
+\usepackage{soul}
+
+\newcommand{\gap}{\vspace{5mm}}
+
+%Belles fraction de fration \cfrac
+%\usepackage{amsmath}
+
+%\usepackage{tikz}
+%\usepackage{circuitikz}
+
+\usepackage{listings}             % Include the listings-package
+%\lstset{language=Matlab}          % Set your language (you can change the language for each code-block optionally)
+%\lstset{language=C}
+
+\usepackage{multicol}
+\usepackage{array}
+% Gray horizontal lines for tables 
+\usepackage{colortbl}
+% Space between lines for tables
+\usepackage{booktabs}
+\newcommand{\rhline}{\midrule[0.1mm]}% \addlinespace[1ex]\arrayrulecolor{gray}\hline\arrayrulecolor{black}\addlinespace[1ex]}
+
+%% User style for C
+
+ \usepackage{color}
+% \usepackage{xcolor}
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.95}
+
+\lstdefinestyle{CStyle}{
+    language=C,
+    tabsize=4,
+    captionpos=b,
+    numbers=left,
+    commentstyle=\color{mGreen},
+    backgroundcolor=\color{white},
+    numberstyle=\color{gray},
+    keywordstyle=\color{blue} \textbf,%otherkeywords={xdata},
+    keywords=[2]{xdata},
+    keywordstyle=[2]\color{red}\textbf,
+    identifierstyle=\color{black},
+    stringstyle=\color{red}\ttfamily,
+    basicstyle = \ttfamily \color{black} \footnotesize,
+    inputencoding=utf8/latin1,
+    showstringspaces=false,
+    frame=single,
+    morekeywords={uint32_t, uint16_t, uint8_t, inline, state_t,
+    uticks_t, atomic, endatomic, @brief, CTRL_IT_t, ID_IT_t}
+}
+
+
+
+
+
+
+
+
+
+
+% the glossary definition needs to be in .sty
+% Seems to be because of different directories
+
+\usepackage[
+   record,
+    acronym,
+    %style=longheader,
+    % indexonlyfirst,
+   % nopostdot
+    ]{glossaries-extra}
+\setabbreviationstyle[acronym]{long-short} % first occurence long, rest short
+%\setabbreviationstyle{long-short} % first occurence long, rest short
+
+%\usepackage[record]{glossaries-extra}
+\GlsXtrLoadResources[src={terms}]
+
+
