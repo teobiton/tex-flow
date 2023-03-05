@@ -7,6 +7,8 @@
 #
 # To enable this hook, rename this file to "pre-commit".
 
+
+## Linter TeX
 # command taken from https://github.com/JLLeitschuh/ktlint-gradle  task addKtlintFormatGitPreCommitHook
 filesToFormat="$(git --no-pager diff --name-status --no-color --cached | awk '$1 != "D" && $2 ~ /\.tex/ { print $NF}')"
 # awk 
