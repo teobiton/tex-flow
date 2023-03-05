@@ -5,8 +5,8 @@ SOURCE = main
 OUT_DIR = ./temp
 LATEX_CMD = latex -output-format='pdf' -output-directory=$(OUT_DIR) $(SOURCE).tex
 
-draw_src = $(shell find ./figure -type f -name "*.drawio.svg")
-draw_target = $(draw_src:./figure/%.drawio.svg=./figure/%.drawio.png)
+draw_src = $(shell find ./img-data -type f -name "*.draw.svg")
+draw_target = $(draw_src:./img-data/%.draw.svg=./img-data/%.draw.pdf)
 
 #https://unix.stackexchange.com/questions/140912/no-target-error-using-make
 
@@ -24,8 +24,8 @@ draw_target = $(draw_src:./figure/%.drawio.svg=./figure/%.drawio.png)
 # Generate png from svg
 #	Input svg file, <name>.drawio.svg
 #	Output png file, <name>.drawio.png
-./figure/%.drawio.png: ./figure/%.drawio.svg
-	inkscape --export-area-drawing --export-dpi=300 --export-png=$@ $<
+./img-data/%.draw.pdf: ./img-data/%.draw.svg
+	rsvg-convert -f pdf -o $@ $<
 
 # Delete .aux files (to force recompile)
 clean:

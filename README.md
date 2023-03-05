@@ -11,11 +11,13 @@ This can be a good approach for students starting with Git and LaTeX.
 In order to use the environment setup tool, several dependancies must be met:
 
 ```
-sudo apt-get install git inkscape texlive texlive-bibtex-extra make
+sudo apt-get install git librsvg2-bin texlive texlive-bibtex-extra make
 ```
 
 To use `texlive-bibtex-extra`, java must be installed on your machine.
 Documentation and explanation as to why it is need can be found [here](https://www.dickimaw-books.com/software/bib2gls/).
+
+`rsvg-convert` installed with `librsvg2-bin` turns SVG files into PDF, PS, or SVG vector images. (see [man](https://manpages.ubuntu.com/manpages/trusty/man1/rsvg-convert.1.html))
 
 ## Usage
 
@@ -41,11 +43,13 @@ Utiliser cette mise en place peut être une bonne première approche vers LaTeX 
 L'outil dépend de certaines librairies qui doivent nécessairement être installées pour l'utiliser.
 
 ```
-sudo apt-get install git inkscape texlive texlive-bibtex-extra make
+sudo apt-get install git librsvg2-bin texlive texlive-bibtex-extra make
 ```
 
  `texlive-bibtex-extra`, java doit être installé.
 La documentation et les explications sur cette dépendance peuvent être trouvées [ici](https://www.dickimaw-books.com/software/bib2gls/).
+
+`rsvg-convert` installé avec `librsvg2-bin` converti les fichiers SVG en PDF, PS, or SVG vector images. (ref [man](https://manpages.ubuntu.com/manpages/trusty/man1/rsvg-convert.1.html))
 
 ## Contribuer
 
