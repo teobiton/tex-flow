@@ -1,5 +1,5 @@
 # Project's name is used to generate the pdf output
-PRJ_NAME=MY_PROJECT # Adapt to your own project
+PRJ_NAME=MY_PROJECT# Adapt to your own project
 
 SOURCE = main
 OUT_DIR = ./temp

@@ -1,10 +1,16 @@
 \documentclass[]{article}
 
-\include{conf} % latex configuration
+\input{conf} % latex configuration
 
 \begin{document}
 
-\include{texContent/01_first_page}
+\input{texContent/01_first_page}
+
+\newpage
+
+% ----------------------------------------------------------------
+% ----------------------- Table of content -----------------------
+% ----------------------------------------------------------------
 
 \tableofcontents
 
@@ -14,23 +20,43 @@
 \vspace{1cm}
 \listoftables
 
+% ----------------------------------------------------------------
+% ------------------------- Introduction -------------------------
+% ----------------------------------------------------------------
 
-\include{texContent/10_intro}
-\include{texContent/90_conclusion}
+\input{texContent/10_intro}
 
+% ----------------------------------------------------------------
+% ------------------------- Conclusion ---------------------------
+% ----------------------------------------------------------------
+
+\newpage
+\input{texContent/90_conclusion}
+
+% ----------------------------------------------------------------
+% ----------------------- Biblio - glossary ----------------------
+% ----------------------------------------------------------------
 
 \newpage
 
 % Atleast one acronym must be used, if not the glossary crashes
 \gls{CPU}
+
 \printunsrtglossary[type=acronym]
 
 \newpage
+% Atleast one citation must be used, if not the biblo crashes
+\cite{Calvez_1}
 \bibliography{proj_bibli}{}
 \bibliographystyle{plain}
 
+% ----------------------------------------------------------------
+% -------------------------- Appendix ----------------------------
+% ----------------------------------------------------------------
+
 \newpage
-\include{texContent/100_appendix}
+\input{texContent/100_appendix}
+
 
 
 \end{document}
