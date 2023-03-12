@@ -11,7 +11,7 @@ This can be a good approach for students starting with Git and LaTeX.
 In order to use the environment setup tool, several dependancies must be met:
 
 ```
-sudo apt-get install git librsvg2-bin texlive texlive-bibtex-extra make
+sudo apt-get install git librsvg2-bin texlive-full texlive-bibtex-extra make
 ```
 
 To use `texlive-bibtex-extra`, java must be installed on your machine.
