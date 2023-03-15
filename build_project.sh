@@ -29,12 +29,12 @@ else
 fi
 
 # texlive
-echo -n "  checking if texlive is installed ... "
-if command -v latex >/dev/null 2>&1 ; then
+echo -n "  checking if texlive-full is installed ... "
+if [ ! $(apt list --installed 2>/dev/null | grep -i texlive-full | wc -w) -eq "0" ] ; then
     echo "yes"
 else
     echo "no"
-    echo "latex not installed!"
+    echo "texlive-full not installed!"
     exit
 fi
 
