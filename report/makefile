@@ -12,13 +12,13 @@ draw_target = $(draw_src:./img-data/%.draw.svg=./img-data/%.draw.pdf)
 
 
 # Needed: "latex" and "texlive-bibtex-extra"
-./$(OUT_DIR)/$(SOURCE).aux: *.tex ./texContent/* $(draw_target) makefile
-	if [ ! -d "temp/" ]; then mkdir temp;  mkdir temp/texContent; fi
+./$(OUT_DIR)/$(SOURCE).aux: *.tex $(draw_target) makefile
+	if [ ! -d "temp/" ]; then mkdir temp;  mkdir temp/texSection; fi
 	$(LATEX_CMD)
 	bibtex ./$(OUT_DIR)/$(SOURCE)
-# https://www.dickimaw-books.com/software/bib2gls/
-# Java needed to execute
-	bib2gls ./$(OUT_DIR)/$(SOURCE)
+	makeglossaries -d temp/ main
+	$(LATEX_CMD)
+	$(LATEX_CMD)
 	mv ./temp/main.pdf ./$(PRJ_NAME).pdf
 
 # Generate png from svg

@@ -1,10 +1,10 @@
 \documentclass[]{article}
 
-\input{conf} % latex configuration
+\input{texConf/conf} % latex configuration
 
 \begin{document}
 
-\input{texContent/01_first_page}
+\input{texSection/01_first_page}
 
 \newpage
 
@@ -24,14 +24,14 @@
 % ------------------------- Introduction -------------------------
 % ----------------------------------------------------------------
 
-\input{texContent/10_intro}
+\input{texSection/10_intro}
 
 % ----------------------------------------------------------------
 % ------------------------- Conclusion ---------------------------
 % ----------------------------------------------------------------
 
 \newpage
-\input{texContent/90_conclusion}
+\input{texSection/90_conclusion}
 
 % ----------------------------------------------------------------
 % ----------------------- Biblio - glossary ----------------------
@@ -42,12 +42,12 @@
 % Atleast one acronym must be used, if not the glossary crashes
 \gls{CPU}
 
-\printunsrtglossary[type=acronym]
+\printglossary[type=\acronymtype]
 
 \newpage
 % Atleast one citation must be used, if not the biblo crashes
 \cite{Calvez_1}
-\bibliography{proj_bibli}{}
+\bibliography{texConf/proj_bibli}{}
 \bibliographystyle{plain}
 
 % ----------------------------------------------------------------
@@ -55,7 +55,7 @@
 % ----------------------------------------------------------------
 
 \newpage
-\input{texContent/100_appendix}
+\input{texSection/100_appendix}
 
 
 

@@ -76,17 +76,11 @@
 % the glossary definition needs to be in .sty
 % Seems to be because of different directories
 
-\usepackage[
-   record,
-    acronym,
-    %style=longheader,
-    % indexonlyfirst,
-   % nopostdot
-    ]{glossaries-extra}
-\setabbreviationstyle[acronym]{long-short} % first occurence long, rest short
-%\setabbreviationstyle{long-short} % first occurence long, rest short
-
-%\usepackage[record]{glossaries-extra}
-\GlsXtrLoadResources[src={terms}]
 
 
+
+\usepackage[acronym]{glossaries}
+\makeglossaries
+
+% Import acronym database acronym.tex
+\input{texConf/acronym}
