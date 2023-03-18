@@ -3,23 +3,28 @@ PRJ_NAME=MY_PROJECT# Adapt to your own project
 
 SOURCE = main
 OUT_DIR = ./temp
-LATEX_CMD = latex -output-format='pdf' -output-directory=$(OUT_DIR) $(SOURCE).tex
+#LATEX_CMD = latex -output-format='pdf' -output-directory=$(OUT_DIR) $(SOURCE).tex
+TEX_FLAGS = -halt-on-error
+LATEX_CMD = pdflatex -output-directory=$(OUT_DIR) $(SOURCE).tex
 
 draw_src = $(shell find ./img-data -type f -name "*.draw.svg")
 draw_target = $(draw_src:./img-data/%.draw.svg=./img-data/%.draw.pdf)
+
+tex_src = $(shell find ./ -name "*.tex" -type f)
 
 #https://unix.stackexchange.com/questions/140912/no-target-error-using-make
 
 
 # Needed: "latex" and "texlive-bibtex-extra"
-./$(OUT_DIR)/$(SOURCE).aux: *.tex $(draw_target) makefile
-	if [ ! -d "temp/" ]; then mkdir temp;  mkdir temp/texSection; fi
+./$(PRJ_NAME).pdf: $(tex_src) $(draw_target) makefile
+	@if [ ! -d "temp/" ]; then mkdir temp;  mkdir temp/texSection; fi
 	$(LATEX_CMD)
 	bibtex ./$(OUT_DIR)/$(SOURCE)
 	makeglossaries -d temp/ main
-	$(LATEX_CMD)
-	$(LATEX_CMD)
-	mv ./temp/main.pdf ./$(PRJ_NAME).pdf
+	$(LATEX_CMD) > /dev/null
+	$(LATEX_CMD) > /dev/null
+	@mv ./temp/main.pdf ./$(PRJ_NAME).pdf
+	@echo "The compilation is finished, well done"
 
 # Generate png from svg
 #	Input svg file, <name>.drawio.svg
