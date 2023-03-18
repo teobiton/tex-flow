@@ -18,8 +18,8 @@ tex_src = $(shell find ./ -name "*.tex" -type f)
 # Needed: "latex" and "texlive-bibtex-extra"
 ./$(PRJ_NAME).pdf: $(tex_src) $(draw_target) makefile
 	@if [ ! -d "temp/" ]; then mkdir temp;  mkdir temp/texSection; fi
-	$(LATEX_CMD)
-	bibtex ./$(OUT_DIR)/$(SOURCE)
+	$(LATEX_CMD) | ./texConf/analyse_log_latex.sh
+	bibtex ./$(OUT_DIR)/$(SOURCE) | ./texConf/analyse_log_bibTex.sh
 	makeglossaries -d temp/ main
 	$(LATEX_CMD) > /dev/null
 	$(LATEX_CMD) > /dev/null
@@ -35,11 +35,12 @@ tex_src = $(shell find ./ -name "*.tex" -type f)
 # Delete .aux files (to force recompile)
 clean:
 	find . -name '*.aux' -delete
+	rm -f $(SOURCE).pdf
 
 # Delete all compilation output files
 reset:
 	make clean
-	rm -f $(SOURCE).pdf
+	rm -f ./$(PRJ_NAME).pdf
 	rm -R -f temp
 
 # Copy the current version of the report at the root of the project
