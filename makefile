@@ -1,1 +1,0 @@
-# Makefile to configure the project

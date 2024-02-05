@@ -1,0 +1,66 @@
+%%%% IEEE v1.8b %%%%
+
+%%%% 1. DOCUMENTCLASS %%%%
+\documentclass[conference, compsoc]{IEEEtran}
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+\usepackage[nocompress]{cite}
+\usepackage[pdftex]{graphicx}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[automake=false]{glossaries}
+\usepackage[utf8]{inputenc}
+
+% define IEEEtrans command to include specific files
+\newcommand*{\IEEEtrans}{}%
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+% declare the path(s) where your graphic files are
+\graphicspath{{\docclass/\docname/img/}{cls/IEEEtran/img/}}
+% and their extensions so you won't have to specify these with
+% every instance of \includegraphics
+\DeclareGraphicsExtensions{.pdf, .jpeg, .png}
+
+\input{\docclass/\docname/infos}
+\input{common/acronyms}
+
+\makeglossaries
+
+\begin{document}
+
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{\doctitle}
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\input{\docclass/\docname/authors}
+
+% make the title area
+\maketitle
+
+% main text of the article
+\input{\docclass/\docname/main}
+
+% references section
+\bibliographystyle{IEEEtran}
+\bibliography{cls/IEEEtran/IEEEabrv, common/Bibliography}
+
+% that's all folks
+\end{document}

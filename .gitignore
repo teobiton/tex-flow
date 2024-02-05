@@ -1,0 +1,7 @@
+# Ignore compilation output files
+
+temp/
+*.pdf
+
+# Ignore CSV files (acronyms)
+*.csv
