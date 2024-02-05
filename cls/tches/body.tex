@@ -1,0 +1,41 @@
+%%%% IACR TCHES %%%%
+
+%%%% 1. DOCUMENTCLASS %%%%
+\documentclass[journal=tches, submission; nohyperref]{cls/tches/iacrtrans}
+
+%%%% 2. PACKAGES %%%%
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[automake=false]{glossaries}
+\usepackage[utf8]{inputenc}
+
+% define TCHES command to include specific files
+\newcommand*{\TCHES}{}%
+
+\graphicspath{{\docclass/\docname/img/}{cls/tches/img/}}
+\DeclareGraphicsExtensions{.pdf, .jpeg, .png}
+
+\input{\docclass/\docname/infos}
+\input{common/acronyms}
+
+\makeglossaries
+
+%%%% 3. AUTHOR, INSTITUTE %%%%
+\input{\docclass/\docname/authors}
+
+%%%% 4. TITLE %%%%
+\title{\doctitle}
+
+\begin{document}
+
+\maketitle
+
+%%%% 5, 6, 7. KEYWORDS, ABSTRACT AND PAPER CONTENT %%%%
+\input{\docclass/\docname/main}
+
+%%%% 8. BILBIOGRAPHY %%%%
+\bibliographystyle{alpha}
+\bibliography{common/Bibliography, cls/tches/abbrev3}
+
+\end{document}
